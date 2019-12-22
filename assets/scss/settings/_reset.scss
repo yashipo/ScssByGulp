@@ -1,0 +1,218 @@
+@charset "utf-8";
+
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif+JP:200,300,400,500,600,700,900&display=swap&subset=japanese");
+
+html {
+  font-family: "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fff;
+  position: relative;
+  color: #333;
+  line-height: 1.2;
+  /* text-align: center; */
+  z-index: 0;
+  word-break: break-all;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media all and (-msas: none) {
+  * {
+    min-height: 0%;
+  }
+  main {
+    display: block;
+  }
+}
+
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+brockquote,
+pre,
+table,
+caption,
+th,
+td,
+address,
+form,
+fieldset,
+legend,
+object {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+
+.content_out {
+  padding-top: 80px;
+  padding-bottom: 200px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"] {
+  font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3",
+    "Hiragino Kaku Gothic Pro", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  transition: all 0.1s;
+  -webkit-transform: translatez(0);
+  color: #333;
+}
+
+a:link,
+a:visited,
+a:active,
+a:hover {
+  outline: none;
+  transition: all 0.1s;
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover img {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+a,
+ins {
+  text-decoration: none;
+}
+
+address,
+em,
+cite,
+dfn,
+var {
+  font-style: normal;
+}
+
+input,
+textarea {
+  font-family: sans-serif;
+  font-weight: normal;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+a img {
+  border: none;
+}
+
+figure {
+  margin: 0;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+
+mark {
+  background-color: initial;
+  color: initial;
+}
+
+/* ios、Safariの電話番号の装飾をリセット */
+a[href^="tel:"] {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ios丸みリセット */
+input[type="button"],
+input[type="text"],
+input[type="submit"],
+input[type="image"],
+textarea {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.copyright {
+  font-family: Verdana, “Droid Sans”;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+/* IEの文字浮きがきになる場合の最終手段 */
+/* @media all and (-ms-high-contrast:none) {
+	body {
+		font-family: "メイリオ",Meiryo,"游ゴシック",YuGothic,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+	}
+} */
+
+/* brなどのブレイクポイント */
+.display_break {
+  display: none;
+}
+
+.display_breakTb {
+  display: none;
+}
+.display_noneTb {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 900px) {
+  .display_breakTb {
+    display: block;
+  }
+  .display_noneTb {
+    display: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .display_breakTb {
+    display: none;
+  }
+  .display_noneTb {
+    display:inline-block;
+  }
+}

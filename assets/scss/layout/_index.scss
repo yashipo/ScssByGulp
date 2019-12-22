@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+.test{
+  color: red;
+  @include font06;
+  @include fontsize(20);
+  background-color: #000;
+  padding: 30px;
+  width: 500px;
+  margin: auto;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+div {
+  text-align: center;
+  @include fontsize(30);
+  p:first-child {
+    @include font08;
+  }
+  p:last-child {
+    @include font09;
+  }
+}

@@ -1,0 +1,175 @@
+@charset "UTF-8";
+
+// $res1800: 1800;
+// $res1700: 1700;
+// $res1600: 1600;
+// $res1500: 1500;
+// $res1550: 1550;
+// $res1400: 1400;
+// $res1300: 1300;
+// $res1200: 1200;
+// $res1100: 1100;
+// $res1024: 1024;
+$res900: 900;
+$res800: 800;
+$res700: 700;
+$tablet: 768;
+$tablet_less: $tablet - 1;
+$res600: 600;
+$res500: 500;
+$res400: 400;
+$iphone7plus: 414;
+$iphone7: 375;
+$iphonese: 320;
+
+$plus_h: 736;
+
+@mixin font01{
+  font-family: 'NotoSansCJKjp-Black',sans-serif;/*01*/
+}
+@mixin font02{
+  font-family: 'NotoSansCJKjp-Bold',sans-serif;/*02*/
+  font-weight: bold;
+}
+@mixin font03{
+  font-family: 'NotoSansCJKjp-DemiLight',sans-serif;/*03*/
+}
+@mixin font04{
+  font-family: 'NotoSansCJKjp-Medium',sans-serif;/*05*/
+}
+@mixin font05{
+  font-family: 'NotoSansCJKjp-Regular',sans-serif;/*06*/
+}
+@mixin font06{
+  font-family: 'NotoSansCJKjp-Thin',sans-serif;/*07*/
+}
+@mixin font07{
+  font-family: 'NotoSansCJKjp-Light',sans-serif;/*04*/
+}
+@mixin font08{
+  font-family: 'Lato', sans-serif;
+}
+@mixin font09{
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Teko');
+
+@mixin yugo {
+  font-family: "游ゴシック", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ ゴシック", sans-serif;
+}
+
+@mixin teco {
+    font-family: 'Teko', sans-serif;
+    line-height: 1;
+}
+
+@mixin meiryo {
+  font-family: 'メイリオ', Meiryo, 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
+}
+
+@mixin beta {
+    text-align: justify;
+    letter-spacing: .01em;
+}
+
+
+// color
+$main_color: #404974;
+$main_color_D: darken($main_color, 15%);
+$main_color_L: lighten($main_color, 10%);
+$main_color2: #058ECC;
+$main_color2_L: lighten($main_color2, 10%);
+$light_color1: #d5d8e6;
+$light_color2: #b7bdd9;
+
+$thick_color: #242a42;
+
+// $sub_color: #407447;
+$sub_color: #407462;
+$sub_light: #7ba680;
+
+$cont_color: #d3473d;
+$cont_colorDeep: #b03830;
+
+$submit_color: #15b996;
+$submit_color_D: darken($submit_color, 10%);
+$submit_color_L: lighten($submit_color, 5%);
+
+$gray_color: #f3f2f1;
+$gray_color_D: darken($gray_color, 30%);
+$white_color: #fff;
+$bk_color: #24292e;
+
+@mixin fontsize($size: 24, $base: 16) {
+  font-size: $size + px;
+  font-size: ($size / $base) * 1rem;
+}
+
+@mixin boxafter{
+  &:after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin betagumi {
+    text-align: justify;
+    letter-spacing: 0.1em;
+}
+
+ /////////////opacity/////////////
+
+  @mixin opacity($type:0.6)
+  {
+    filter:alpha(opacity=$type*100);
+    -moz-opacity: $type;
+    opacity: $type;
+  }
+/////////////レスポンシブ/////////////
+
+@mixin res($size){
+  @media only screen and (max-width: $size + "px") {
+    @content;
+  }
+}
+
+@mixin res_min($size){
+  @media only screen and (min-width: $size + "px") {
+    @content;
+  }
+}
+
+@mixin  res_h($size , $size2) {
+    @media all and (max-width: $size + 'px') and (max-height: $size2 + 'px') {
+      @content;
+    }
+}
+
+// IE＆Firefoxハック用mixin
+@mixin hack($ver: 11) {
+  	@if $ver == 11 { // IE11以上
+    	@at-root _:-ms-fullscreen,:root & {
+      		@content;
+    	}
+  	}
+  	@else if $ver == fox { // Firefox
+    	@-moz-document url-prefix() {
+      		@content;
+    	}
+  	}
+  	@else if $ver == ch { // Chrome
+    	@media screen and (-webkit-min-device-pixel-ratio:0){
+      		@content;
+    	}
+  	}
+  	@else if $ver == ed { // Edge
+    	@supports (-ms-ime-align:auto) {
+      		@content;
+    	}
+  	}
+}
